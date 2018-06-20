@@ -2,6 +2,7 @@
   "manifest_version": 2,
   "name": "Redmine2Gitlab",
   "version": "1.0.0",
+  "description": "Synchronize Gitlab issue with Redmine issue",
   "icons": {
     "16": "img/icon.png",
     "48": "img/icon.png",

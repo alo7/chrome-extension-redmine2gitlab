@@ -13,10 +13,9 @@ const labels = {
 
 async function run() {
   const redmineUrl = await getRedmineIssueUrl()
-  console.log(redmineUrl)
-  // const issue = await fetchRedmine(`${redmineUrl}.json`)
-  // const issueUrl = await postGitlab(issue)
-  // openUrlNewTab(issueUrl)
+  const issue = await fetchRedmine(`${redmineUrl}.json`)
+  const issueUrl = await postGitlab(issue)
+  openUrlNewTab(issueUrl)
 }
 
 function openUrlNewTab(url) {
