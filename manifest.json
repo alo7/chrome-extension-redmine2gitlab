@@ -16,6 +16,10 @@
     "default_title": "Redmine to Gitlab issue",
     "default_popup": "popup.html"
   },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
   "permissions": [
     "notifications",
     "tabs",
