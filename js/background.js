@@ -1,15 +1,38 @@
-
-// const GITLAB_URL = 'https://git.demo.com'
-// const GITLAB_PROJECT_ID = 1 //https://gitlab.demo.com/group/project/edit   General project settings
-// const GITLAB_USER_ID = 1 //https://gitlab.demo.com/profile
-// const GITLAB_PRIVATE_TOKEN = 'xxxx-xxx' //https://gitlab.demo.com/profile/personal_access_tokens
-// const REDMINE_URL = 'https://redmine.saybot.net'
-// const REDMINE_API_KEY = 'xxxxxxx' //https://redmine.demo.com/my/account
-
+// redmine: gitlab 对应关系
 const labels = {
   Task: 'Feature',
   Bug: 'Bug'
 }
+
+const config = {
+  GITLAB_URL: '',
+  GITLAB_PROJECT_ID: '',
+  GITLAB_USER_ID: '',
+  GITLAB_PRIVATE_TOKEN: '',
+  REDMINE_URL: '',
+  REDMINE_API_KEY: ''
+}
+
+chrome.storage.sync.get(config, items => {
+  Object.assign(config, items)
+})
+
+if (!Object.values(config).every(i => !!i)) {
+  if (chrome.runtime.openOptionsPage) {
+    chrome.runtime.openOptionsPage()
+  } else {
+    window.open(chrome.runtime.getURL('options.html'))
+  }
+}
+
+const {
+  GITLAB_URL,
+  GITLAB_PROJECT_ID,
+  GITLAB_USER_ID,
+  GITLAB_PRIVATE_TOKEN,
+  REDMINE_URL,
+  REDMINE_API_KEY
+} = config
 
 async function run() {
   const redmineUrl = await getRedmineIssueUrl()
