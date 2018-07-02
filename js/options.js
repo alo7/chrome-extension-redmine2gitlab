@@ -1,7 +1,7 @@
 const getValue = id => document.getElementById(id).value
 
 document.addEventListener('DOMContentLoaded', () => {
-  const config = {
+  const defaultConfig = {
     GITLAB_URL: '',
     GITLAB_PROJECT_ID: '',
     GITLAB_USER_ID: '',
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     REDMINE_API_KEY: ''
   }
 
-  chrome.storage.sync.get(config, items => {
+  chrome.storage.sync.get(defaultConfig, items => {
     getValue('git_url') = items.GITLAB_URL
     getValue('git_id') = items.GITLAB_PROJECT_ID
     getValue('git_uid') = items.GITLAB_USER_ID
@@ -39,6 +39,7 @@ document.getElementById('save').addEventListener('click', () => {
 
   chrome.storage.sync.set(config, () => {
     document.getElementById('status').textContent = '保存成功！'
+    chrome.runtime.reload()
     setTimeout(() => {
       document.getElementById('status').textContent = ''
     }, 800)
