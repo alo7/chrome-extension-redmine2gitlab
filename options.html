@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      font-size: 16px;
+      width: 700px;
+      height: 350px;
+      padding: 10px;
+      font-family: 'Microsoft Yahei';
+    }
+
+    #status {
+      color: red;
+    }
+
+    div {
+      margin: 10px 0;
+    }
+
+    input {
+      width: 250px;
+      margin: 0 20px;
+    }
+  </style>
+  <title>配置</title>
+</head>
+
+<body>
+  <div>
+    <input type="text" id='git_url' placeholder="GitLab URL" /> https://gitlab.demo.com
+  </div>
+  <div>
+    <input type="text" id='git_id' placeholder="GitLab Project ID" /> https://gitlab.demo.com/&lt;group&gt;/&lt;project&gt;/edit
+  </div>
+  <div>
+    <input type="text" id='git_uid' placeholder="GitLab User ID" /> https://gitlab.demo.com/profile
+  </div>
+  <div>
+    <input type="text" id='git_token' placeholder="GitLab Personal Access Tokens" /> https://gitlab.demo.com/profile/personal_access_tokens
+  </div>
+  <div>
+    <input type="text" id='redmine_url' placeholder="Redmine URL" /> https://redmine.demo.com
+  </div>
+  <div>
+    <input type="text" id='redmine_key' placeholder="Redmine API acess key" /> https://redmine.demo.com/my/account
+  </div>
+
+  <button id="save">保存配置</button>
+
+  <div id="status"></div>
+
+  <script src="js/options.js"></script>
+</body>
+
+</html>
