@@ -4,13 +4,13 @@ Synchronize Gitlab issue with Redmine issue
 
 ## How to use
 
-1.  在 `js/background` 中把把注释掉的配置项按说明填写一下
-2.  在 chrome 插件中打开`开发者模式`并加载此项目文件夹
-3.  在 redmine 某个 issue 页面, 点击浏览器右上角插件图标
+1.  安装插件 https://chrome.google.com/webstore/detail/redmine2gitlab/iaoldkgblgoeoademdkmioofoohoklgc
+2.  第一次使用, 点击浏览器右上角插件图标, 会弹出配置页面, 按说明填写配置
+3.  在 redmine 某个 issue 页面, 点击浏览器右上角插件图标, 稍等片刻, 会自动打开新建的 gitlab issue 页面
 
 ## todo
 
-- [ ] 配置页
+- [x] 配置页
 - [ ] 在 redmine issue 旁添加按键
 - [ ] 一键显示自己的 issue
-- [ ] 打包插件
+- [x] 打包插件
