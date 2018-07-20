@@ -1,9 +1,15 @@
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /^v.*/
+
 version: 2
 jobs:
   build:
-    filters:
-      tags:
-        only: /^v.*/
     docker:
       - image: ubuntu:16.04
     environment:
