@@ -30,7 +30,8 @@ function main(config) {
   function getRedmineIssueUrl() {
     return new Promise(resolve => {
       chrome.tabs.query({ currentWindow: true, active: true }, tabs => {
-        resolve(tabs[0].url)
+        const url = new URL(tabs[0].url)
+        resolve(`${url.origin}${url.pathname}`)
       })
     })
   }
