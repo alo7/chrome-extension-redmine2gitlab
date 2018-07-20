@@ -1,5 +1,11 @@
 const getValue = id => document.getElementById(id).value
 
+const setValues = items => {
+  Object.keys(items).forEach(key => {
+    document.getElementById(key).value = items[key]
+  }) 
+} 
+
 document.addEventListener('DOMContentLoaded', () => {
   const defaultConfig = {
     GITLAB_URL: '',
@@ -11,22 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   chrome.storage.sync.get(defaultConfig, items => {
-    getValue('git_url') = items.GITLAB_URL
-    getValue('git_id') = items.GITLAB_PROJECT_ID
-    getValue('git_uid') = items.GITLAB_USER_ID
-    getValue('git_token') = items.GITLAB_PRIVATE_TOKEN
-    getValue('redmine_url') = items.REDMINE_URL
-    getValue('redmine_key') = items.REDMINE_API_KEY
+    setValues(items)
   })
 })
 
 document.getElementById('save').addEventListener('click', () => {
-  const GITLAB_URL = getValue('git_url')
-  const GITLAB_PROJECT_ID = getValue('git_id')
-  const GITLAB_USER_ID = getValue('git_uid')
-  const GITLAB_PRIVATE_TOKEN = getValue('git_token')
-  const REDMINE_URL = getValue('redmine_url')
-  const REDMINE_API_KEY = getValue('redmine_key')
+  const GITLAB_URL = getValue('GITLAB_URL')
+  const GITLAB_PROJECT_ID = getValue('GITLAB_PROJECT_ID')
+  const GITLAB_USER_ID = getValue('GITLAB_USER_ID')
+  const GITLAB_PRIVATE_TOKEN = getValue('GITLAB_PRIVATE_TOKEN')
+  const REDMINE_URL = getValue('REDMINE_URL')
+  const REDMINE_API_KEY = getValue('REDMINE_API_KEY')
 
   const config = {
     GITLAB_URL,
