@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Redmine2Gitlab",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Synchronize Gitlab issue with Redmine issue",
   "icons": {
     "16": "img/icon.png",
@@ -29,5 +29,5 @@
     "http://*/*",
     "https://*/*"
   ],
-  "homepage_url": "https://github.com/liubiantao"
+  "homepage_url": "https://github.com/alo7/chrome-extension-redmine2gitlab"
 }
