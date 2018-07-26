@@ -47,7 +47,7 @@ function main(config) {
     } = data.issue
 
     const regex = /\d+(\.\d+)+/g
-    let version = fixed_version.name.match(regex)
+    let version = fixed_version && fixed_version.name.match(regex)
 
     const issue = {
       title: `${subject} (REDMINE-${id})`,
