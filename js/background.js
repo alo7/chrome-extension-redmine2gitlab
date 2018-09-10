@@ -85,7 +85,7 @@ function main(config) {
     )
       .then(response => response.json())
       .catch(error => console.error(error))
-      .then(data => data[0].id)
+      .then(data => (data[0] ? data[0].id : ''))
   }
 
   function postGitlab(data) {
