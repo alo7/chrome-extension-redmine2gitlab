@@ -47,7 +47,7 @@ function main(config) {
     } = data.issue
 
     const regex = /\d+(\.\d+)+/g
-    let version = fixed_version.name.match(regex)
+    let version = fixed_version && fixed_version.name.match(regex)
 
     const issue = {
       title: `${subject} (REDMINE-${id})`,
@@ -85,7 +85,7 @@ function main(config) {
     )
       .then(response => response.json())
       .catch(error => console.error(error))
-      .then(data => data[0].id)
+      .then(data => (data[0] ? data[0].id : ''))
   }
 
   function postGitlab(data) {

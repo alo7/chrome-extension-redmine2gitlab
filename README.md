@@ -1,4 +1,4 @@
-# chrome-extension-redmine2gitlab
+# chrome-extension-redmine2gitlab  [![CircleCI](https://circleci.com/gh/liubiantao/chrome-extension-redmine2gitlab.svg?style=svg)](https://circleci.com/gh/liubiantao/chrome-extension-redmine2gitlab)
 
 Synchronize Gitlab issue with Redmine issue
 
@@ -11,6 +11,8 @@ Synchronize Gitlab issue with Redmine issue
 ## todo
 
 - [x] 配置页
+- [x] 自动打包发布插件
 - [ ] 在 redmine issue 旁添加按键
 - [ ] 一键显示自己的 issue
-- [x] 打包插件
+- [ ] 同步附件
+
