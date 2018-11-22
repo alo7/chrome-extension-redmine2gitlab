@@ -24,7 +24,14 @@ function main(config) {
   }
 
   function openUrlNewTab(url) {
-    chrome.tabs.create({ url: url })
+    chrome.tabs.create({ url }, tab => {
+      setTimeout(() => {
+        chrome.tabs.sendMessage(tab.id, {createMergeRequest: true});
+      }, 3000);
+      setTimeout(() => {
+        chrome.tabs.sendMessage(tab.id, {openCheckOutBranch: true});
+      }, 6000);
+    })
   }
 
   function getRedmineIssueUrl() {
